@@ -25,7 +25,7 @@ scripts/outputs/*
 !scripts/outputs/.gitkeep
 
 
-user_data/strategies/*
+!user_data/strategies/*
 !user_data/strategies/.gitkeep
 
 results/*
