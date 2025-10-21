@@ -1,10 +1,10 @@
 {
     "proxy": {
-        "https": "http://127.0.0.1:7890",
-        "http": "http://127.0.0.1:7890",
-        "all": "socks5://127.0.0.1:7890"
+        "https": "http://185.93.89.144:8002",
+        "http": "http://185.93.89.144:8002",
+        "all": "socks5://185.93.89.144:8002"
     },
-    "freqtrade_path": "/usr/local/bin/freqtrade",
+    "freqtrade_path": "/root/GeneTrader/.venv/bin/freqtrade",
     "strategy_dir": "user_data/strategies",
     "user_dir": "user_data",
     "data_dir": "user_data/data/binance",
@@ -23,9 +23,9 @@
     "add_dynamic_timeframes": false,
     "checkpoint_dir": "checkpoints",
     "checkpoint_frequency": 1,
-    "project_dir": "/content/drive/MyDrive/Crypto/GeneTrader",
+    "project_dir": "/root/GeneTrader",
     "best_generations_dir": "bestgenerations",
-    "base_strategy_file": "user_data/strategies/GeneStrategy.py",
+    "base_strategy_file": "strategies/GeneStrategy.py",
     "fix_pairs": true,
     "num_pairs": 1,
     "diversity_threshold": 0.1,

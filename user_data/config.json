@@ -33,39 +33,39 @@
     "order_book_top": 1
   },
   "exchange": {
-    "name": "binanceus",
+    "name": "binance",
     "key": "",
     "secret": "",
     "ccxt_config": {
-        "proxies": {
-            "http": "socks5h://185.93.89.144:8002",
-            "https": "socks5h://185.93.89.144:8002"
-        },
-        "timeout": 10000
+      "proxies": {
+        "http": "socks5h://185.93.89.144:8002",
+        "https": "socks5h://185.93.89.144:8002"
+      },
+      "timeout": 10000
     },
     "ccxt_async_config": {
-        "proxies": {
-            "http": "socks5h://185.93.89.144:8002",
-            "https": "socks5h://185.93.89.144:8002"
-        },
-        "timeout": 10000
+      "proxies": {
+        "http": "socks5h://185.93.89.144:8002",
+        "https": "socks5h://185.93.89.144:8002"
+      },
+      "timeout": 10000
     },
     "pair_whitelist": [
-      "XRP/USDT",
       "BTC/USDT",
-      "SOL/USDT",
       "ETH/USDT",
-      "ZEC/USDT",
+      "SOL/USDT",
+      "XRP/USDT",
+      "WAL/USDT",
       "DOGE/USDT",
-      "FLOKI/USDT",
+      "ZEC/USDT",
+      "ASTER/USDT",
+      "ZBT/USDT",
       "LINK/USDT",
+      "AVNT/USDT",
+      "XPL/USDT",
       "SUI/USDT",
-      "ADA/USDT",
-      "PENGU/USDT",
-      "USELESS/USDT",
-      "ONE/USDT",
-      "ENA/USDT",
-      "ASTER/USDT"
+      "FLOKI/USDT",
+      "PAXG/USDT"
     ],
     "pair_blacklist": [
       "BNB/.*"
