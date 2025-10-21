@@ -4,7 +4,7 @@ generation_*.txt
 
 backtesting_commands.sh
 
-ga.json
+!ga.json
 mini.json
 
 logs/*
