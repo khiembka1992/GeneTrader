@@ -36,8 +36,20 @@
     "name": "binanceus",
     "key": "",
     "secret": "",
-    "ccxt_config": {},
-    "ccxt_async_config": {},
+    "ccxt_config": {
+        "proxies": {
+            "http": "socks5h://185.93.89.144:8002",
+            "https": "socks5h://185.93.89.144:8002"
+        },
+        "timeout": 10000
+    },
+    "ccxt_async_config": {
+        "proxies": {
+            "http": "socks5h://185.93.89.144:8002",
+            "https": "socks5h://185.93.89.144:8002"
+        },
+        "timeout": 10000
+    },
     "pair_whitelist": [
       "XRP/USDT",
       "BTC/USDT",
