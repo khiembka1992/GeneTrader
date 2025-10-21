@@ -63,7 +63,6 @@ def get_binance_usdt_pairs(mode='all', top_n=100):
         ticker_url = "https://api.binance.com/api/v3/ticker/24hr"
         ticker_data = requests.get(ticker_url).json()
         # 使用 quoteVolume (USDT交易量) 作为排序依据
-        print(ticker_data)
         volume_dict = {item['symbol']: float(item['quoteVolume']) for item in ticker_data}
     
     # 获取黑名单
