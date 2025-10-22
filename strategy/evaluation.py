@@ -70,15 +70,44 @@ def parse_backtest_results(file_path: str) -> Dict[str, Any]:
             return default
 
     def parse_duration(duration_str: str) -> int:
-        parts = duration_str.split(', ')
-        total_minutes = 0
-        for part in parts:
-            if 'day' in part:
-                total_minutes += int(part.split()[0]) * 24 * 60
-            else:
-                time_parts = part.split(':')
-                total_minutes += int(time_parts[0]) * 60 + int(time_parts[1])
-        return total_minutes
+        """
+        Parse Freqtrade 2023/2025 formats:
+        Examples:
+        '0 days, 01:20:00'
+        '0d 00:10 / 0d 06:29 / 0d 01:10'
+        '2d 05:30'
+        '1 day, 00:15:00'
+        Returns total minutes (average if multiple durations are separated by '/').
+        """
+        print("duration_str:", duration_str)
+        import re
+
+        if not duration_str or not isinstance(duration_str, str):
+            return 0
+
+        # Chuẩn hóa
+        duration_str = duration_str.lower().replace('days', 'd').replace('day', 'd').replace(',', ' ')
+        parts = [p.strip() for p in duration_str.split('/') if p.strip()]
+
+        def parse_one(part: str) -> int:
+            total = 0
+            m = re.search(r'(\d+)\s*d', part)
+            if m:
+                total += int(m.group(1)) * 24 * 60
+                part = re.sub(r'\d+\s*d', '', part).strip()
+            t = re.split(r'[:\s]+', part)
+            try:
+                if len(t) >= 2:
+                    total += int(t[0]) * 60 + int(t[1])
+            except ValueError:
+                pass
+            return total
+
+        totals = [parse_one(p) for p in parts]
+        print("totals:", totals)
+        if totals:
+            return int(sum(totals) / len(totals))  # trung bình 3 loại duration
+        return 0
 
     # print(content)
     

@@ -49,3 +49,4 @@ daily_results/*/gen*/config.json  # 忽略所有 daily_results 目录下的 gene
 
 *.pyc
 *.Identifier
+.venv
